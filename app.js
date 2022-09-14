@@ -6,8 +6,8 @@
 //     }
 // });
 
-const leftbtn = document.querySelector(".l-btn");
-const rightbtn = document.querySelector(".r-btn");
+const leftbtn = document.querySelector(".r-btn");
+const rightbtn = document.querySelector(".l-btn");
 
 rightbtn.addEventListener('click',function(event) {
     console.log('do0ne');
