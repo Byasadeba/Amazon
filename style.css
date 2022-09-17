@@ -40,6 +40,7 @@ body{
 .logo{
     flex: 0.13;
     margin-right: 10px;
+    margin-left: 5px;
     justify-content: space-between;
 }
 .map{
@@ -263,11 +264,13 @@ body{
     margin-right: 20px;
     overflow: hidden;
 }
-.second-3 span{
+.second-3  a span{
     padding: 5px 10px;
     cursor: pointer;
     border: 1px solid transparent;
     border-radius: 3px;
+    text-decoration: none;
+    color: white;
 }
 .second-1 span{
     padding: 5px;
@@ -279,7 +282,7 @@ body{
 .second-2 li:hover{
     border: 1px solid white;
 }
-.second-3 span:hover{
+.second-3 a:hover{
     border: 1px solid white;
 }
 .sec-1{
