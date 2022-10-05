@@ -245,6 +245,61 @@ body{
     left:20px;
     font-size: 16px;
 }
+.dark_mode_btn{
+    /* position: absolute;
+    top: 0;right: 0; */
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none
+}
+.dark_mode_active{
+    background: #1c1c25
+}
+.dark_mode_active .container-1{
+    background: #1c1c25   
+}
+.dark_mode_active .container-1 .para{
+    background-color: #272729;
+    color: #eaeded;
+}
+.dark_mode_active .product-comp .box h3{
+    background: #272729;
+    color:  #eaeded;
+}
+.dark_mode_active .product-comp .box{
+    background: #272729;
+    color:  #eaeded;
+}
+.dark_mode_active .box-d{
+    background: #272729;
+}
+.dark_mode_active .box-a{
+    background: #272729;
+}
+.dark_mode_active .box-b .best{
+    background: #272729;
+    color:  #eaeded;
+}
+.dark_mode_active .slide-sec{
+    background: #272729;
+    color:  #eaeded;
+}
+.dark_mode_active .l-btn{
+    background: #272729;
+    color:  #eaeded;
+}
+.dark_mode_active .r-btn{
+    background: #272729;
+    
+}
+.dark_mode_active .fa-chevron-right{
+    color:  #eaeded;
+}
+.dark_mode_active .fa-chevron-left{
+    color:  #eaeded;
+}
 .cart:hover{
     border: 1px solid white;
     border-radius: 3px;

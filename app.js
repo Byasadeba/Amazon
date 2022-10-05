@@ -121,3 +121,16 @@ function couponclose(){
     document.body.classList.remove("stop-scroll")
 };
 
+let body = document.querySelector('body');
+let dark_mode_btn = document.querySelector('.dark_mode_btn');
+let dark_mode_status = false;            
+    dark_mode_btn.addEventListener('click', function(){
+    body.classList.toggle('dark_mode_active');
+    if (dark_mode_status == false) {
+    this.innerHTML = '<i class="fa-sharp fa-solid fa-sun" aria-hidden="true">';
+    dark_mode_status = true;
+    }else{
+    this.innerHTML = '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+    dark_mode_status = false;
+    }
+    });
