@@ -108,3 +108,16 @@ sign.addEventListener("click", ( ) => {
     tri.classList.toggle("active");
 });
  
+window.onload = couponload()
+
+function couponload(){
+    document.querySelector(".main").style.visibility='visible';
+    document.querySelector(".sec-1").style.opacity = '0.4'
+    document.body.classList.add("stop-scroll")
+};
+function couponclose(){
+    document.querySelector(".main").style.visibility='hidden';
+    document.querySelector(".sec-1").style.opacity = '1'
+    document.body.classList.remove("stop-scroll")
+};
+

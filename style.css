@@ -10,6 +10,72 @@ body{
     background-color: #eaeded;
     box-sizing: border-box;
 }
+*,
+*:after,
+*::before{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* body{
+    font-family:'Gill Sans';
+    width:100%;
+    background: #2a575a;
+}
+  */
+.main{
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image: url(images/images/giphy.webp); 
+    background-size: cover;
+    height: 460px;
+    width: 460px;
+    z-index: 2;
+    visibility: hidden;
+}
+.main i{
+    position: absolute;
+    top: 2%;
+    left: 94%;
+    
+}
+.fa-square-xmark{
+    color: white;
+    font-size:  15px;
+}
+.fa-square-xmark:hover{
+    font-size: 25px;
+    color: rgb(241, 207, 13);
+}
+.main h2{
+    position: absolute;
+    color: white;
+    font-size:  52px;
+    left: 34px;
+    top: 65%;
+}
+.main h3{
+    position: absolute;
+    color: orange;
+    font-size: 30px;
+    left: 20px;
+    top: 55%;
+}
+.main a{
+    text-decoration: none;
+    color: aliceblue;
+    
+} 
+.main a p{
+    position: absolute;
+    transform: rotate(-42deg);
+    font-size: 22px;
+    left: -15px;
+    top: 47px;
+    color: #29bb61;
+}
 .first{
     width:100%;
     height: 70px;
