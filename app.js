@@ -1,11 +1,3 @@
-// document.querySelector(".r-btn").addEventListener("click",{
-//     function (event) {
-//         console.log("done");
-//         document.querySelector(".product-slide").scrollleft +=1100;
-//         event.preventdefault();
-//     }
-// });
-
 const leftbtn = document.querySelector(".l-btn");
 const rightbtn = document.querySelector(".r-btn");
 
@@ -134,3 +126,75 @@ let dark_mode_status = false;
     dark_mode_status = false;
     }
     });
+
+
+//geo with Weather
+
+const temparatureField = document.querySelector(".weather1 span")
+const cityField = document.querySelector(".weather2 p")
+const dateField = document.querySelector(".weather2 span")
+const emojiField = document.querySelector(".weather3 img")
+const weatherField = document.querySelector(".weather3 span")
+
+
+
+let target = "Bhubaneswar"
+
+
+const fetchData = async() =>{
+    const url = `https://api.weatherapi.com/v1/current.json?key=eb25ae7039054da5840154151222310&q=${target}`
+    const response = await fetch(url);
+    const data = await response.json();
+
+
+    console.log(data);
+
+    const {
+        
+        current:{
+            temp_c,
+            condition:{text,icon},
+        },
+        location:{name,localtime},
+
+
+    } = data
+
+    updateDom(temp_c,name,localtime,icon,text);
+};
+
+function updateDom (temparature,city,time,emoji,text){
+    temparatureField.innerText = temparature;
+    cityField.innerText = city;
+    const exactTime = time.split(" ")[1];
+    const exactDate = time.split(" ")[0];
+    const exactDay = getDayName(new Date(exactDate).getDay());
+
+    dateField.innerText = `${exactTime} - ${exactDay} ${exactDate}`
+
+    emojiField.src = emoji;
+    weatherField.innerText = text;
+}
+
+fetchData();
+
+function getDayName (num){
+    switch (num){
+        case 0:
+            return "Sunday"; 
+            case 1: 
+                return "Monday"
+                case 2: 
+                    return "Tuesday"
+                    case 3: 
+                        return "Wednesday"
+                        case 4: 
+                            return "Thursday"
+                            case 5: 
+                                return "Friday"
+                                case 6: 
+                                    return "Saturday"
+        default:
+            return "Don't know"
+    }
+}
