@@ -573,30 +573,63 @@ body{
     background-size: cover;
     background-position: center;
     justify-content: space-between;
+    box-shadow: 0 0 25px rgba(0,0,0,1);
 }
-.weather1{
+ .weather1{
     font-size: 25px;
     margin-top: 7px;
     margin-left: -120px;
 }
+
 .weather1 span{
     font-size: 23px;
 }
+
 .weather2 p{
     font-size: 30px;
 }
+
 .weather2 span{
     font-size: 15px;
 }
+
 .weather3 span{
     font-size: 29px;
-    margin-left: 30px;
+    margin-left: -5px;
 }
+
 .weather3 img{
-    width: 7rem;
+    width: 5rem;
 }
+
 .weather3{
     padding-bottom: 20px;
+} 
+
+nav{
+    display: flex;
+    height: 40px;
+    box-shadow: 0 0 25px rgba(0,0,0,1);
+    background-color:rgba(61, 59, 59, 0.45);
+    border-radius: 100px 100px 0 0;    
+}
+.searchField{
+    font-size: 1.1rem;
+    outline: none;
+    color: rgb(20, 19, 19);
+    background-color: transparent;
+    padding: 0.25rem 0;
+    border: none;
+    border-bottom: 2px solid black;
+}
+nav form button{
+    background-color: #36577c;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 0 20px 5px 0;
+    outline: none;
+    border:none;
+    cursor: pointer;
 }
 .box.box-c img{
     margin: 0 38px;

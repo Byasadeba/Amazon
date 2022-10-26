@@ -99,7 +99,7 @@ sign.addEventListener("click", ( ) => {
     signin.classList.toggle("active");
     tri.classList.toggle("active");
 });
- 
+  
 window.onload = couponload()
 
 function couponload(){
@@ -130,24 +130,36 @@ let dark_mode_status = false;
 
 //geo with Weather
 
+
+//initiliazing all elements constant
+
 const temparatureField = document.querySelector(".weather1 span")
 const cityField = document.querySelector(".weather2 p")
 const dateField = document.querySelector(".weather2 span")
 const emojiField = document.querySelector(".weather3 img")
 const weatherField = document.querySelector(".weather3 span")
+const searchField = document.querySelector(".searchField")
+const form = document.querySelector("form")
 
+//Adding eventListener to the form
 
+form.addEventListener("submit",search)
 
-let target = "Bhubaneswar"
+//Default Location
 
+let target = "Bhubaneshwar"
 
-const fetchData = async() =>{
+//function to fetch data from API
+
+const fetchData = async(target) =>{
+try {
     const url = `https://api.weatherapi.com/v1/current.json?key=eb25ae7039054da5840154151222310&q=${target}`
     const response = await fetch(url);
     const data = await response.json();
 
 
-    console.log(data);
+    
+//destructuring
 
     const {
         
@@ -159,24 +171,40 @@ const fetchData = async() =>{
 
 
     } = data
+//calling the update function
 
     updateDom(temp_c,name,localtime,icon,text);
+} catch (e) {
+    alert(`Location not found!`)
+}
 };
 
+//function to manipulatedom
+
 function updateDom (temparature,city,time,emoji,text){
-    temparatureField.innerText = temparature;
-    cityField.innerText = city;
     const exactTime = time.split(" ")[1];
     const exactDate = time.split(" ")[0];
     const exactDay = getDayName(new Date(exactDate).getDay());
 
+    temparatureField.innerText = temparature;
+    cityField.innerText = city;
     dateField.innerText = `${exactTime} - ${exactDay} ${exactDate}`
-
     emojiField.src = emoji;
     weatherField.innerText = text;
 }
 
-fetchData();
+//function to search loction name
+
+fetchData(target);
+
+function search (e){
+    e.preventDefault();
+    target = searchField.value;
+    fetchData(target)
+}
+
+
+//function for getting the full name of the day
 
 function getDayName (num){
     switch (num){
